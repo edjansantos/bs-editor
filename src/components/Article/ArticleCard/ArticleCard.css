@@ -1,0 +1,22 @@
+.article-card {
+    display: grid;
+    border-radius: 6px;
+    background: #fff;
+    border: solid 1px #efefef;
+    box-shadow: 0 2px #efefef;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+} 
+
+.article-card a {
+    color: #333;
+    text-decoration: none;
+}
+
+.article-card a:hover {
+    color: #000;
+}
+.article-card:hover {
+    background: #fdfdfd;
+}

@@ -1,0 +1,61 @@
+.bs-form-control {
+    margin: 0 15px 15px 0px;
+    display:flex;
+    flex-flow: column;
+}
+
+.bs-form-control label {
+    font-weight: 400;
+    color: #333;
+    order: 1;
+}
+
+
+input.bs-control:focus + label,
+input.bs-control:active + label {
+    font-weight: 600;
+}
+
+.bs-form-control .quill {
+    order:2;
+}
+
+input.bs-control {
+    order: 2;
+    font-size:14px;
+    font-weight: 300;
+    display: block;
+    margin: 0 0 1px 0;
+    padding: 10px 0px;
+    border-radius: 2px;
+    border:none;
+    border-bottom: solid 1px #ccc;
+    color: #666;
+    outline:0;
+    width: 100%;
+    transition: all .3s;
+}
+
+input.bs-control:focus {
+    border-bottom: solid 2px #666;
+    margin-bottom: 0;
+}
+
+
+.bs-btn-primary {
+    display: inline-block;
+    cursor:pointer;
+    width: auto;
+    padding: 15px;
+    background: #333f4e;
+    color: #fff;
+    font-weight: 600;
+    border:none;
+    border-bottom: solid 2px #1e252e;
+    transition: all .3s;
+}
+
+.bs-btn-primary:hover {
+    border-bottom: solid 4px #1e252e;
+    background: #3e4d5e;
+}

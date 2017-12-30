@@ -1,0 +1,53 @@
+header.Header {
+    display:grid;
+    grid-template-columns: 200px auto;
+    background:#fff;
+    box-shadow: 0 2px #efefef;
+    height:50px;
+}
+
+header.Header div.logo, header.Header div.menuItems{
+    display: inline-grid;
+    align-items: center;
+}
+
+header.Header div.logo {
+    padding-left:15px;
+    font-size:22px;
+    background:#333f4e;
+    color: #fff;
+    box-shadow: 0 2px #868f9a;
+    font-weight: 300;
+}
+
+header.Header ul {
+    margin:0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+}
+
+header.Header ul li {
+    display: inline-flex;
+    height:100%;
+}
+
+header.Header ul li a {
+    height:100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background .6s;
+    color:#333f4e;
+}
+
+header.Header ul li a:hover {
+    background: #f7f7f7;
+    border-bottom:solid 1px #ccc;
+}
+
+header.Header ul li a.active {
+    background: #f7f7f7;
+    border-bottom:solid 1px #333f4e;
+}
