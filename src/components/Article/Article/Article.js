@@ -8,12 +8,10 @@ import './Article.css';
 class Article extends Component {
 
     state = {
-        article: {
-            title: '',
-            subTitle: '',
-            publishDate: new Date(),
-            author: ''
-        },
+        title: '',
+        subTitle: '',
+        publishDate: '',
+        author: '',
         editorHtml: ''
     }
 
@@ -27,7 +25,7 @@ class Article extends Component {
         if (this.props.match.params.id !== undefined) {
             axios.get('https://bs-app-api.herokuapp.com/post/' + this.props.match.params.id)
                 .then(response => {
-                    this.setState({ article: response.data.post, editorHtml: response.data.post.content });
+                    this.setState({ ...response.data.post, editorHtml: response.data.post.content });
                 })
         }
     }
@@ -59,7 +57,7 @@ class Article extends Component {
     }
 
     handleChange(e) {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({ [e.target.name]: e.target.value });
     }
     render() {
         return (
@@ -68,19 +66,19 @@ class Article extends Component {
                     <div className="column editor">
                         <div className="row">
                             <div className="bs-form-control">
-                                <input type="text" name="article.title" value={this.state.article.title} onChange={this.handleChange.bind(this)} className="bs-control bs-big" id="title" required autoComplete="off" />
+                                <input type="text" name="title" value={this.state.title} onChange={this.handleChange.bind(this)} className="bs-control bs-big" id="title" required autoComplete="off" />
                                 <label htmlFor="title">Título</label>
                             </div>
                             <div className="bs-form-control">
-                                <input type="text" name="article.subTitle" value={this.state.article.subTitle} onChange={this.handleChange.bind(this)} className="bs-control" id="subTitle" autoComplete="off" />
+                                <input type="text" name="subTitle" value={this.state.subTitle} onChange={this.handleChange.bind(this)} className="bs-control" id="subTitle" autoComplete="off" />
                                 <label htmlFor="subTitle"><span>Sub-título</span></label>
                             </div>
                             <div className="bs-form-control column">
-                                <input type="text" name="article.publishDate" value={this.state.article.publishDate} onChange={this.handleChange.bind(this)} className="bs-control" id="publishDate" required autoComplete="off" />
+                                <input type="text" name="publishDate" value={this.state.publishDate} onChange={this.handleChange.bind(this)} className="bs-control" id="publishDate" required autoComplete="off" />
                                 <label htmlFor="publishDate"><span>Data da Publicação</span></label>
                             </div>
                             <div className="bs-form-control column">
-                                <input type="text" name="article.author" value={this.state.article.author} onChange={this.handleChange.bind(this)} className="bs-control" id="author" required  />
+                                <input type="text" name="author" value={this.state.author} onChange={this.handleChange.bind(this)} className="bs-control" id="author" required  />
                                 <label htmlFor="author"><span>Autor</span></label>
                             </div>
                             <div className="bs-form-control">
@@ -100,8 +98,8 @@ class Article extends Component {
                             <span className="camera"></span>
                             <span className="mic"></span>
                             <div className="iframe-container">
-                                <h1>{this.state.article.title}</h1>
-                                <p className="lead">{this.state.article.subTitle}</p>
+                                <h1>{this.state.title}</h1>
+                                <p className="lead">{this.state.subTitle}</p>
                                 <div dangerouslySetInnerHTML={{ __html: this.state.editorHtml }}></div>
                             </div>
                             <div className="home-button"></div>
