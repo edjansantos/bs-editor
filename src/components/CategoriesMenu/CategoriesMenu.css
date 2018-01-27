@@ -19,5 +19,11 @@
 
 .categories-list li:hover a {
     color: #fff;
+    background-color: #52657c;
+}
+
+.categories-list li a.active {
+    color: #fff;
     background-color: #333f4e;
+    font-weight: 500;
 }

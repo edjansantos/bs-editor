@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const categoriesMenuItem = (props) => {
     return (
         <li>
-            <Link to="/article/1">{props.name}</Link>
+            <NavLink to={"/articles/"+props.id} activeClassName="active">{props.name}</NavLink>
         </li>
     );
 }
