@@ -20,6 +20,10 @@ input.bs-control:active + label {
     order:2;
 }
 
+label.no-order {
+    order:0;
+}
+
 input.bs-control {
     order: 2;
     font-size:14px;

@@ -1,0 +1,33 @@
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px 0px #ccc;
+    /* border:solid 1px #ccc; */
+    padding: 20px 20px 10px 20px;
+    margin: 30vh auto 0 auto;
+    background: #fff;
+}
+
+.login-body {
+    background:#efefef;
+}
+
+.login-box div.logo {
+    font-size:33px;
+    color: #333f4e;
+    text-align: center;
+    font-weight: 300;
+    width:50%;
+    margin:0 auto;
+}
+
+@media only screen and (max-width : 480px) {
+    .login-box {
+        margin: 20vh auto 0 auto;
+        width:80%;
+    }
+    .login-box div.logo {
+        font-size:25px;
+    }
+}

@@ -15,6 +15,7 @@ const layout = (props) => (
             <Route path="/" exact render={() => <h1>Home 2</h1>} />            
             <Route path="/article/:id" exact  component={Article} />            
             <Route path="/articles" exact  component={Articles} />            
+            <Route path="/articles/:id" exact  component={Articles} />            
             <Route path="/articles/new" exact  component={NewArticle} />            
             
             {props.children}
