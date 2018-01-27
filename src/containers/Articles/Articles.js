@@ -15,13 +15,9 @@ class Articles extends Component {
     }
 
     getPosts(idCategory) {
-        
-        console.log(idCategory);
         axios.get('https://bs-app-api.herokuapp.com/posts-by-category/'+idCategory)
             .then(response => {
-
                 this.setState({ articles: response.data.posts });
-                // console.log(response.data.posts);
             })
     }
 
