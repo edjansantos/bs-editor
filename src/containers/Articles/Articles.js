@@ -15,10 +15,12 @@ class Articles extends Component {
     }
 
     getPosts(idCategory) {
-        axios.get('https://bs-app-api.herokuapp.com/posts-by-category/'+idCategory)
-            .then(response => {
-                this.setState({ articles: response.data.posts });
-            })
+        if (idCategory) {
+            axios.get('https://bs-app-api.herokuapp.com/posts-by-category/' + idCategory)
+                .then(response => {
+                    this.setState({ articles: response.data.posts });
+                })
+        }
     }
 
     componentDidMount() {
@@ -27,6 +29,7 @@ class Articles extends Component {
     }
 
     componentWillReceiveProps(newProps) {
+        if(newProps.match.params.id !== this.props.match.params.id)
         this.getPosts(newProps.match.params.id);
     }
 

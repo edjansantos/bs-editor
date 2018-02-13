@@ -18,7 +18,7 @@ const layout = (props) => (
             <Route path="/articles/:id" exact  component={Articles} />            
             <Route path="/articles/new" exact  component={NewArticle} />            
             
-            {props.children}
+            {/* {props.children} */}
         </main>
     </Aux>
     // <ReactQuill
