@@ -13,7 +13,7 @@ class Header extends Component {
                 </div>
                 <div className="menuItems">
                     <ul>
-                        <HeaderItem name="Novo Artigo" href="/articles/new" />
+                        <HeaderItem name="Novo Artigo" href="/new-article" />
                         <HeaderItem name="Lista de Artigos" href="/articles" />
                         <HeaderItem name="Gestão de Imagens" href="/images"/>
                     </ul>

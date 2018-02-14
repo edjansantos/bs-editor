@@ -12,7 +12,9 @@
 
 
 input.bs-control:focus + label,
-input.bs-control:active + label {
+input.bs-control:active + label,
+select.bs-control:focus + label,
+select.bs-control:active + label {
     font-weight: 600;
 }
 
@@ -24,7 +26,7 @@ label.no-order {
     order:0;
 }
 
-input.bs-control {
+input.bs-control, select.bs-control {
     order: 2;
     font-size:14px;
     font-weight: 300;
@@ -40,11 +42,16 @@ input.bs-control {
     transition: all .3s;
 }
 
-input.bs-control:focus {
+
+input.bs-control:focus, select.bs-control:focus {
     border-bottom: solid 2px #666;
     margin-bottom: 0;
 }
 
+
+input.bs-control:invalid, select.bs-control:invalid {
+    border-bottom: solid 1px red;
+}
 
 .bs-btn-primary {
     display: inline-block;

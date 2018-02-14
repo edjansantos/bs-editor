@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 // import SideMenu from '../components/SideMenu/SideMenu';
 import Header from '../Header/Header';
 import Aux from '../../hoc/Auxs';
-import Article from '../../components/Article/Article/Article';
+import ViewArticle from '../../components/Article/ViewArticle/ViewArticle';
 import Articles from '../../containers/Articles/Articles';
 import NewArticle from '../../components/Article/NewArticle/NewArticle';
 
@@ -12,23 +12,13 @@ const layout = (props) => (
     <Aux>
         <Header />
         <main>
-            <Route path="/" exact render={() => <h1>Home 2</h1>} />            
-            <Route path="/article/:id" exact  component={Article} />            
-            <Route path="/articles" exact  component={Articles} />            
-            <Route path="/articles/:id" exact  component={Articles} />            
-            <Route path="/articles/new" exact  component={NewArticle} />            
-            
-            {/* {props.children} */}
+            <Route exact strict path="/" render={() => <h1>Home 2</h1>} />            
+            <Route exact strict path="/article/:id" component={ViewArticle} />            
+            <Route exact strict path="/articles" component={Articles} />            
+            <Route exact strict path="/articles/:id" component={Articles} />            
+            <Route exact strict path="/new-article" component={NewArticle} />            
         </main>
     </Aux>
-    // <ReactQuill
-    //   onChange={this.handleChange}
-    //   value={this.state.editorHtml}
-    //   modules={this.modules}
-    //   formats={this.formats}
-    //   bounds={'.App'}
-    //   placeholder={this.props.placeholder}
-    // />
 );
 
 export default layout;

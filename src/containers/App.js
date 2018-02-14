@@ -45,7 +45,6 @@ class App extends Component {
     axios.interceptors.response.use(response => {
       // var newToken = response.config.headers['x-access-token'];
       var newToken = response.data.access_token;
-      console.log(newToken);
       if(newToken)
         this.setLogged(newToken);
 
@@ -53,7 +52,6 @@ class App extends Component {
     }, function (error) {
       if (error.request.responseURL.indexOf('/auth') < 0) {
         if (error.response && error.response.status === 401) {
-          console.log('EXPIROU');
           _this.setState({
             token: '',
             logged: false
