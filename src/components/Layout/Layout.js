@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 // import SideMenu from '../components/SideMenu/SideMenu';
 import Header from '../Header/Header';
-import Aux from '../../hoc/Auxs';
+import Aux from '../../hoc/auxs';
 import ViewArticle from '../../components/Article/ViewArticle/ViewArticle';
 import Articles from '../../containers/Articles/Articles';
 import NewArticle from '../../components/Article/NewArticle/NewArticle';
